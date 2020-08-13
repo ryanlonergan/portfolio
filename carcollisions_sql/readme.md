@@ -6,7 +6,7 @@ For this project, I analyzed car collisions data using MySQL for data analysis a
 
 <img src="/images/carcollisions_picture.jpg" width="500">
 
-Data and Cleaning
+### Data and Cleaning
 
 In the initial data set, there were over 200 thousand records with 40 different variables, covering a period from 2003 to 2019. However, earlier records were not as complete as later ones and not all the variables were informative as they were often redundant or missing for most entries. Thus, I used Python to remove any records from before 2013 and selected 25 variables to work, narrowing the scope of the data.
 
@@ -16,7 +16,7 @@ Additionally, there was a categorical variable which recorded the severity of th
 
 After importing the data into MySQL Workbench, I noticed 2 more anomalies: any record with a severity value of 0 was missing information and data from 2019 only covered part of the year. Instead of making changes in Python and importing the data again, I found it easier to create a new table dropping any records from 2019 or with a severity code of 0. This left me with almost 63 thousand records to analyze.
 
-Analysis
+### Analysis
 
 From exploring the remaining variables, I found that many of them did not have a large effect on the severity or number of accidents. Some factors, such as road condition, weather, light levels, or inattention, did not have a significant impact on the data, but two variables did: DUI and speeding. Where these variables were present, the severity of accidents and fatalities greatly increased. For instance, DUI’s resulted in over 4 times as many fatalities and speeding resulted in almost 5 times more.
 
@@ -26,7 +26,7 @@ Furthermore, there was geographic information contained in the data set, includi
 
 <img src="/images/carcollisions_3.jpg" alt="Seattle Car Accident Heatmap" width="400">
 
-Outcome
+### Outcome
 
 Overall, the project provided insights into the nature of accidents, including how bad they were and location. It was not a surprise to see that most of the collisions were in busy areas, such as Downtown Seattle or the University District. Furthermore, comparing how DUIs and speeding affected accidents was interesting as well. As there are high fines for both, it was intriguing to see how they were justified due to the increased severity they introduced. From this project, a variety of stakeholders, such as the DOT or police, could analyze where accidents were more frequent, providing greater focus on these trouble spots.
 
