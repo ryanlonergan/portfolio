@@ -1,19 +1,10 @@
 # Seattle Car Collisions Data Project
 
-For this project, I analyzed car collisions data using MySQL for data analysis and Tableau for visuals. I unfortunately was in a major car accident in 2018 and while I recovered over time, it made wonder if anything could be done to help prevent further collisions. To investigate this goal, I found a data set collected by the Seattle Department of Transportation made from records of accidents from the Seattle Police Department, I began my investigation.
-
-The code for this project can be found here: [test ~~~~~~ SQL Code](https://www.google.com)
-
-<img src="/images/carcollisions_picture.jpg" width="400">
-<img src="/images/carcollisions_1.jpg" alt="Distribution of Accidents by Month and Average Severity" width="400">
-<img src="/images/carcollisions_2.jpg" alt="Severity by Variable" width="400">
-<img src="/images/carcollisions_3.jpg" alt="Seattle Car Accident Heatmap" width="400">
-
-
-
-overview
+*The code for this project can be found here: [test ~~~~~~ SQL Code](https://www.google.com)*
 
 For this project, I analyzed car collisions data using MySQL for data analysis and Tableau for visuals. I unfortunately was in a major car accident in 2018 and while I recovered over time, it made wonder if anything could be done to help prevent further collisions. To investigate this goal, I found a data set collected by the Seattle Department of Transportation made from records of accidents from the Seattle Police Department, I began my investigation.
+
+<img src="/images/carcollisions_picture.jpg" width="500">
 
 Data and Cleaning
 
@@ -21,13 +12,19 @@ In the initial data set, there were over 200 thousand records with 40 different 
 
 Additionally, there was a categorical variable which recorded the severity of the accident. While it would be invaluable for the analysis, it used subcategories for any collisions, such as  injuries and serious injures having codes of 2a and 2b. Knowing this would cause problems later, I changed the coding system to consist of only integers ranging from 0 with little to no damage and 4 which resulted in fatalities.
 
+<img src="/images/carcollisions_1.jpg" alt="Distribution of Accidents by Month and Average Severity" width="500">
+
 After importing the data into MySQL Workbench, I noticed 2 more anomalies: any record with a severity value of 0 was missing information and data from 2019 only covered part of the year. Instead of making changes in Python and importing the data again, I found it easier to create a new table dropping any records from 2019 or with a severity code of 0. This left me with almost 63 thousand records to analyze.
 
-analysis
+Analysis
 
 From exploring the remaining variables, I found that many of them did not have a large effect on the severity or number of accidents. Some factors, such as road condition, weather, light levels, or inattention, did not have a significant impact on the data, but two variables did: DUI and speeding. Where these variables were present, the severity of accidents and fatalities greatly increased. For instance, DUI’s resulted in over 4 times as many fatalities and speeding resulted in almost 5 times more.
 
-Additionally, there was geographic information contained in the data set, including cross street and coordinates. Using the street data, I first generated a list of where the most collisions occurred. However, this information did not prove to be very useful as it was difficult to find hotspots based solely on street name. Instead, I used Tableau to create a heatmap based on the latitude and longitude. This style was much easier to read as darker colors represented trouble spots that should have greater focus than others.
+<img src="/images/carcollisions_2.jpg" alt="Severity by Variable" width="500">
+
+Furthermore, there was geographic information contained in the data set, including cross street and coordinates. Using the street data, I first generated a list of where the most collisions occurred. However, this information did not prove to be very useful as it was difficult to find hotspots based solely on street name. Instead, I used Tableau to create a heatmap based on the latitude and longitude. This style was much easier to read as darker colors represented trouble spots that should have greater focus than others.
+
+<img src="/images/carcollisions_3.jpg" alt="Seattle Car Accident Heatmap" width="400">
 
 Outcome
 
